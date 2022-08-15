@@ -15,4 +15,18 @@ class UserController extends Controller
         );
         return view('user',compact('welcome','wel'));
     }
+
+    public function index1(){
+      
+        return view('contact');
+    }
+
+    public function index3(){
+      
+        return view('about');
+    }
+    public function index2(){
+      
+        return view('welcome');
+    }
 }

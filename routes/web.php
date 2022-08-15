@@ -103,7 +103,16 @@ use App\Http\Controllers\UserController;
 //     return redirect("about");
 // });
 
-Route::view("contact", '/contact');
-Route::view("about", '/about');
+// Route::view("contact", '/contact');
+// Route::view("about", '/about');
 
-Route::redirect('/', "contact");
+// Route::redirect('/', "contact");
+
+//Group route
+
+Route::group([],function () {
+    Route::get('/users',[UserController::class,'index'])->name('user.index2');
+    Route::get('/contacts',[UserController::class,'index'])->name('user.index1');
+    Route::get('/about',[UserController::class,'index'])->name('user.index3');
+});
+
