@@ -5,9 +5,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //Basic Routing
 // Route::get('/category',function(){
@@ -92,5 +92,18 @@ Route::get('/', function () {
 // Route::view('users', 'user');
 // Route::view('/users', 'user');
 
-Route::get('/users',[UserController::class,'index'])->name('user.index');
+// Route::get('/users',[UserController::class,'index'])->name('user.index');
 
+//Redirect Route
+// Route::view('/contacts', 'contact');
+// Route::view('/abouts', 'about');
+
+// Route::get('/',function(){
+   
+//     return redirect("about");
+// });
+
+Route::view("contact", '/contact');
+Route::view("about", '/about');
+
+Route::redirect('/', "contact");
