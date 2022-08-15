@@ -1,17 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,13 +40,13 @@ Route::get('/', function () {
 //Regular Expression Constraints RouteService Provider
 
 //Global Constraints
-Route::get('/category/{name?}',function($name =null){
-    return 'Category '.$name;
-});
+// Route::get('/category/{name?}',function($name =null){
+//     return 'Category '.$name;
+// });
 
-Route::get('/product/{id?}',function($id =null){
-    return 'id '.$id;
-});
+// Route::get('/product/{id?}',function($id =null){
+//     return 'id '.$id;
+// });
 
 //Available Router Methods
 
@@ -75,9 +66,20 @@ Route::get('/product/{id?}',function($id =null){
 //     return "Request method is: " . $request;
 // });
 
-Route::resource('/items', function (Request $request) {
-    return "Request method is: " . $request;
-});
+// Route::resource('/items', function (Request $request) {
+//     return "Request method is: " . $request;
+// });
 
 
+//Controller routing
+
+// Route::get('/products',[ProductController::class,'index']);
+
+
+// Route::get('/products/{name}',[ProductController::class,'index']);
+
+// Route::get('/products/{name?}',[ProductController::class,'index']);
+
+//Name route
+Route::get('/products/{name?}',[ProductController::class,'index'])->name('product.index');
 
