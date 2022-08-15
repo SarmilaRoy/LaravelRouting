@@ -110,8 +110,15 @@ use App\Http\Controllers\UserController;
 
 //Group route
 
-Route::group([],function () {
-    Route::get('/users',[UserController::class,'index'])->name('user.index2');
+// Route::group([],function () {
+//     Route::get('/users',[UserController::class,'index'])->name('user.index2');
+//     Route::get('/contacts',[UserController::class,'index'])->name('user.index1');
+//     Route::get('/about',[UserController::class,'index'])->name('user.index3');
+// });
+
+//prefix
+Route::group(['prefix'=> '/user'],function () {
+    Route::get('/',[UserController::class,'index'])->name('user.index2');
     Route::get('/contacts',[UserController::class,'index'])->name('user.index1');
     Route::get('/about',[UserController::class,'index'])->name('user.index3');
 });
