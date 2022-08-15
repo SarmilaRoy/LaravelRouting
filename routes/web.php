@@ -57,4 +57,27 @@ Route::get('/product/{id?}',function($id =null){
     return 'id '.$id;
 });
 
+//Available Router Methods
+
+// Route::get($uri, $callback);
+// Route::post($uri, $callback);
+// Route::put($uri, $callback);
+// Route::patch($uri, $callback);
+// Route::delete($uri, $callback);
+// Route::options($uri, $callback);
+
+//output show use postman
+// Route::match(['get', 'post'], '/items', function (Request $request) {
+//     return "Request method is: " . $request;
+// });
+
+// Route::any('/items', function (Request $request) {
+//     return "Request method is: " . $request;
+// });
+
+Route::resource('/items', function (Request $request) {
+    return "Request method is: " . $request;
+});
+
+
 
