@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
@@ -81,5 +82,15 @@ Route::get('/', function () {
 // Route::get('/products/{name?}',[ProductController::class,'index']);
 
 //Name route
-Route::get('/products/{name?}',[ProductController::class,'index'])->name('product.index');
+// Route::get('/products/{name?}',[ProductController::class,'index'])->name('product.index');
+
+//view Route
+// Route::get('users', function () {
+//     return view('user');
+// });
+
+// Route::view('users', 'user');
+// Route::view('/users', 'user');
+
+Route::get('/users',[UserController::class,'index'])->name('user.index');
 
